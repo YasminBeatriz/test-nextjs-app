@@ -17,7 +17,8 @@
     "type-check": "tsc --noEmit",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
-    "postinstall": "husky install"
+    "postinstall": "patch-package",
+    "watch": "npx tailwindcss -i src/app/ui/global.css -o src/app/ui/output.css --watch"
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
@@ -26,7 +27,14 @@
     ]
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
+    "@tailwindcss/forms": "^0.5.7",
+    "@vercel/postgres": "0.5.1",
+    "bcryptjs": "2.4.3",
+    "clsx": "2.1.0",
     "next": "14.0.4",
+    "patch-package": "8.0.0",
+    "postinstall-postinstall": "2.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -34,11 +42,13 @@
     "@commitlint/cli": "18.4.3",
     "@commitlint/config-conventional": "18.4.3",
     "@ianvs/prettier-plugin-sort-imports": "4.1.1",
+    "@types/bcryptjs": "2.4.6",
     "@types/node": "20.10.6",
     "@types/react": "18.2.46",
     "@types/react-dom": "18.2.18",
     "@typescript-eslint/eslint-plugin": "6.16.0",
     "@typescript-eslint/parser": "6.16.0",
+    "autoprefixer": "10.4.16",
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
     "eslint-config-prettier": "9.1.0",
@@ -47,8 +57,10 @@
     "eslint-plugin-prettier": "5.1.2",
     "husky": "8.0.3",
     "lint-staged": "15.2.0",
+    "postcss": "8.4.32",
     "prettier": "3.1.1",
     "prettier-plugin-sort-json": "3.1.0",
+    "tailwindcss": "3.4.0",
     "typescript": "5.3.3"
   }
 }
